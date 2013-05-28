@@ -258,6 +258,10 @@
                     code {
                         font-size: 1.2em;
                     }
+                    var {
+                        font-style: normal;
+                        font-weight: bold;
+                    }
                     table {
                         margin-bottom: 0.5em;
                     }
@@ -564,7 +568,7 @@
     <xsl:template match="wadl:param">
         <tr>
             <td>
-                <p><strong><xsl:value-of select="@name"/></strong></p>
+                <p><var><xsl:value-of select="@name"/></var></p>
             </td>
             <td>
                 <p>
