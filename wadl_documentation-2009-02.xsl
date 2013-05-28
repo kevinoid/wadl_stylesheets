@@ -416,7 +416,7 @@
                 <div class="resource">
                     <h3 id="{$id}">
                         <xsl:choose>
-                            <xsl:when test="wadl:doc[@title]"><xsl:value-of select="wadl:doc[@title][1]/@title"/></xsl:when>
+                            <xsl:when test="wadl:doc[@title]"><xsl:value-of select="wadl:doc[@title][1]/@title"/> &#x2013; <xsl:value-of select="$name"/></xsl:when>
                             <xsl:otherwise>
                                 <xsl:copy-of select="$name"/>
                                 <xsl:for-each select="wadl:method[1]/wadl:request/wadl:param[@style='query']">
