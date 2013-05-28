@@ -243,6 +243,12 @@
                         margin-bottom: 0em;
                     }
                     h4 {
+                        font-size: 1.25em;
+                        color: #99a;
+                        margin: 0.5em 0em 0.25em 0em;
+                    }
+                    h5 {
+                        font-size: 1.1em;
                         margin: 0em;
                         padding: 0em;
                         border-bottom: 2px solid white;
@@ -442,7 +448,7 @@
                         <xsl:with-param name="prefix">resource-wide</xsl:with-param>
                         <xsl:with-param name="style">matrix</xsl:with-param>
                     </xsl:apply-templates>                    
-                    <h6>Methods</h6>
+                    <h4>Methods</h4>
                     <div class="methods">
                         <xsl:apply-templates select="wadl:method"/>
                     </div>
@@ -457,7 +463,7 @@
     <xsl:template match="wadl:method">
         <xsl:variable name="id"><xsl:call-template name="get-id"/></xsl:variable>
         <div class="method">
-            <h4 id="{$id}"><xsl:value-of select="@name"/></h4>
+            <h5 id="{$id}"><xsl:value-of select="@name"/></h5>
             <xsl:apply-templates select="wadl:doc"/>                
             <xsl:apply-templates select="wadl:request"/>
             <xsl:apply-templates select="wadl:response"/>
@@ -527,7 +533,7 @@
                 <xsl:if test="@element or wadl:param">
                     <div class="representation">
                         <xsl:if test="@element">
-                            <h6>XML Schema</h6>
+                            <h4>XML Schema</h4>
                             <xsl:call-template name="get-element">
                                 <xsl:with-param name="context" select="."/>
                                 <xsl:with-param name="qname" select="@element"/>
