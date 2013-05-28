@@ -255,7 +255,7 @@
                     dd {
                         margin-left: 1em;
                     }
-                    tt {
+                    code {
                         font-size: 1.2em;
                     }
                     table {
@@ -580,8 +580,8 @@
                         </ul>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:if test="@default"><p>Default: <tt><xsl:value-of select="@default"/></tt></p></xsl:if>
-                        <xsl:if test="@fixed"><p>Fixed: <tt><xsl:value-of select="@fixed"/></tt></p></xsl:if>
+                        <xsl:if test="@default"><p>Default: <code><xsl:value-of select="@default"/></code></p></xsl:if>
+                        <xsl:if test="@fixed"><p>Fixed: <code><xsl:value-of select="@fixed"/></code></p></xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>                        
             </td>
@@ -594,7 +594,7 @@
                 </xsl:if>
                 <xsl:if test="@path">
                     <ul>
-                        <li>XPath to value: <tt><xsl:value-of select="@path"/></tt></li>
+                        <li>XPath to value: <code><xsl:value-of select="@path"/></code></li>
                         <xsl:apply-templates select="wadl:link"/>
                     </ul>
                 </xsl:if>
@@ -610,14 +610,14 @@
 
     <xsl:template match="wadl:option">
         <li>
-            <tt><xsl:value-of select="@value"/></tt>
+            <code><xsl:value-of select="@value"/></code>
             <xsl:if test="ancestor::wadl:param[1]/@default=@value"> <small> (default)</small></xsl:if>
         </li>
     </xsl:template>
 
     <xsl:template match="wadl:option" mode="option-doc">
             <dt>
-                <tt><xsl:value-of select="@value"/></tt>
+                <code><xsl:value-of select="@value"/></code>
                 <xsl:if test="ancestor::wadl:param[1]/@default=@value"> <small> (default)</small></xsl:if>
             </dt>
             <dd>
