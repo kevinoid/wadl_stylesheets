@@ -287,6 +287,12 @@
                     p + ul, p + ol, p + dl {
                         margin-top: 0em;
                     }
+                    .method {
+                        margin-top: 1.5em;
+                    }
+                    .method:first-child {
+                        margin-top: 0;
+                    }
                     .optional {
                         font-weight: normal;
                         opacity: 0.75;
