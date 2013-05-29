@@ -467,7 +467,12 @@
     <xsl:template match="wadl:method">
         <xsl:variable name="id"><xsl:call-template name="get-id"/></xsl:variable>
         <div class="method">
-            <h5 id="{$id}"><xsl:value-of select="@name"/></h5>
+            <h5 id="{$id}">
+                <xsl:value-of select="@name"/>
+                <xsl:if test="wadl:doc[@title]">
+                    &#x2013; <xsl:value-of select="wadl:doc[@title][1]/@title"/>
+                </xsl:if>
+            </h5>
             <xsl:apply-templates select="wadl:doc"/>                
             <xsl:apply-templates select="wadl:request"/>
             <xsl:apply-templates select="wadl:response"/>
